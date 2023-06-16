@@ -1,6 +1,8 @@
 import React from "react";
 
-function MenuBar(props) {
+function MenuBar({handleClick, state}) {
+
+
   /*
 
   The 'span' tags below are the menu items. Think about the way a menu 
@@ -14,19 +16,19 @@ function MenuBar(props) {
 
   return (
     <div className="ui four item menu">
-      <span className="item active">
+      <span id = "user" className={state === "user" ? "item active" : "item"} onClick={() => handleClick("user")}>
         <i className="user large icon" />
       </span>
 
-      <span className="item">
+      <span id="photo" className={state === "photo" ? "item active" : "item"} onClick={() => handleClick("photo")}>
         <i className="photo large icon" />
       </span>
 
-      <span className="item">
+      <span id="cocktail" className={state === "cocktail" ? "item active" : "item"} onClick={() => handleClick("cocktail")}>
         <i className="cocktail large icon" />
       </span>
 
-      <span className="item">
+      <span id="pokemon" className={state === "pokemon" ? "item active" : "item"} onClick={() => handleClick("pokemon")}>
         <i className=" themeisle large icon" />
       </span>
     </div>
